@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".AddItemActivity">
+
+    <!-- Overview category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/product_information"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp"
+            android:orientation="vertical">
+
+            <!-- Product Name field -->
+            <EditText
+                android:id="@+id/edit_product_name"
+                android:hint="Item"
+                android:inputType="textCapWords"
+                style="@style/AddItemTheme." />
+
+            <!-- Price field -->
+            <EditText
+                android:id="@+id/edit_price"
+                android:hint="@string/Price"
+                android:inputType="textCapWords"
+                style="@style/AddItemTheme." />
+
+            <!-- Quantity field -->
+            <EditText
+                android:id="@+id/edit_quantity"
+                android:hint="@string/Quantity"
+                android:inputType="textCapWords"
+                style="@style/AddItemTheme." />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Stock category -->
+    <LinearLayout
+        android:id="@+id/spinner_in_stock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/category_in_stock"
+            style="@style/CategoryStyle" />
+
+        <!-- Input field -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <!-- Stock drop-down spinner -->
+            <Spinner
+                android:id="@+id/spinner_stock"
+                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:paddingRight="16dp"
+                android:spinnerMode="dropdown"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Supplier category -->
+    <LinearLayout
+        android:id="@+id/edit_supplier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/Supplier"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Supplier Name field -->
+            <EditText
+                android:id="@+id/edit_supplier_name"
+                android:hint="@string/supplier_name"
+                android:inputType="text"
+                style="@style/AddItemTheme." />
+
+        <!-- Label -->
+        <TextView
+            android:text="@string/supplier_phone_number"
+            style="@style/CategoryStyle" />
+
+            <!-- Weight field -->
+            <EditText
+                android:id="@+id/edit_phone_number"
+                android:hint="@string/phone_number"
+                android:inputType="text"
+                style="@style/AddItemTheme." />
+
+            <!-- Signature for Company Name (Inc.) -->
+            <TextView
+                android:id="@+id/label_inc"
+                android:text="Inc."
+                style="@style/AddItemTheme."/>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

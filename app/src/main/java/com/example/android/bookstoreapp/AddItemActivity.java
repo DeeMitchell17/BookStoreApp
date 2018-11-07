@@ -37,7 +37,7 @@ public class AddItemActivity extends Activity {
     private EditText mSupplierPhoneNumberEditText;
 
     /** EditText field to enter if product is in stock */
-    private Spinner mInStockSpinner;
+    private Spinner mStockSpinner;
 
     private String mInStock = StoreContract.ItemEntry.AVAILABILITY_UNKNOWN;
 
@@ -49,7 +49,7 @@ public class AddItemActivity extends Activity {
         mProductNameEditText = (EditText) mProductNameEditText.findViewById(R.id.edit_product_name);
         mPriceEditText = (EditText) mPriceEditText.findViewById(R.id.edit_price);
         mQuantityEditText = (EditText) mQuantityEditText.findViewById(R.id.edit_quantity);
-        mInStockSpinner = (Spinner) mInStockSpinner.findViewById(R.id.spinner_in_stock);
+        mStockSpinner = (Spinner) mStockSpinner.findViewById(R.id.spinner_in_stock);
         mSupplierNameEditText = (EditText) mSupplierNameEditText.findViewById(R.id.edit_supplier_name);
         mSupplierPhoneNumberEditText = (EditText) mSupplierPhoneNumberEditText.findViewById(R.id.edit_phone_number);
 
@@ -57,16 +57,15 @@ public class AddItemActivity extends Activity {
     }
 
     private void setupSpinner() {
-        // Create adapter for spinner. The list options are from the String array it will use
-        // the spinner will use the default layout
-        ArrayAdapter inStockSpinnerAdapter = ArrayAdapter.createFromResource(this,
+
+        ArrayAdapter stockSpinnerAdapter = ArrayAdapter.createFromResource(this,
                 R.array.array_in_stock_options, android.R.layout.simple_spinner_item);
 
-        inStockSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        stockSpinnerAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
 
-        mInStockSpinner.setAdapter(inStockSpinnerAdapter);
+        mStockSpinner.setAdapter(stockSpinnerAdapter);
 
-        mInStockSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        mStockSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selection = (String) parent.getItemAtPosition(position);
@@ -94,13 +93,13 @@ public class AddItemActivity extends Activity {
 
         String nameString = mProductNameEditText.getText().toString().trim();
 
-        String supplierNameString = mSupplierNameEditText.getText().toString().trim();
-
         String priceString = mPriceEditText.getText().toString().trim();
         int price = Integer.parseInt(priceString);
 
         String quantityString = mQuantityEditText.getText().toString().trim();
         int quantity = Integer.parseInt(quantityString);
+
+        String supplierNameString = mSupplierNameEditText.getText().toString().trim();
 
         String contactString = mSupplierPhoneNumberEditText.getText().toString().trim();
         int contact = Integer.parseInt(contactString);
@@ -113,47 +112,36 @@ public class AddItemActivity extends Activity {
         values.put(StoreContract.ItemEntry.COLUMN_PRODUCT_NAME, nameString);
         values.put(StoreContract.ItemEntry.COLUMN_PRICE, price);
         values.put(StoreContract.ItemEntry.COLUMN_QUANTITY, quantity);
+        values.put(StoreContract.ItemEntry.COLUMN_IN_STOCK, mInStock);
         values.put(StoreContract.ItemEntry.COLUMN_SUPPLIER_NAME, supplierNameString);
         values.put(StoreContract.ItemEntry.COLUMN_SUPPLIER_PHONE_NUMBER, contact);
 
         long newRowId = db.insert(StoreContract.ItemEntry.TABLE_NAME, null, values);
 
-        // Show a toast message depending on whether or not the insertion was successful
         if (newRowId == -1) {
-            // If the row ID is -1, then there was an error with insertion.
+
             Toast.makeText(this, "Error saving new product info", Toast.LENGTH_SHORT).show();
         } else {
-            // Otherwise, the insertion was successful and we can display a toast with the row ID.
             Toast.makeText(this, "Product saved with row id: " + newRowId, Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu options from the res/menu/menu_editor.xml file.
-        // This adds menu items to the app bar.
         getMenuInflater().inflate(R.menu.menu_add_item, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
-            // Respond to a click on the "Save" menu option
             case R.id.action_save:
-                // Save item to database
                 insertItem();
-                // Exit activity
                 finish();
                 return true;
-            // Respond to a click on the "Delete" menu option
             case R.id.action_delete:
-                // Do nothing for now
                 return true;
-            // Respond to a click on the "Up" arrow button in the app bar
             case android.R.id.home:
-                // Navigate back to parent activity (StoreItemActivity)
                 NavUtils.navigateUpFromSameTask(this);
                 return true;
         }

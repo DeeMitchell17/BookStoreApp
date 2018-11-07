@@ -26,4 +26,6 @@
     <string name="phone_number">Phone Number</string>
     <string name="error_saving_new_product">Error saving new product</string>
     <string name="product_saved_with_row_id">Product saved with row id:</string>
+    <string name="Inc">Inc.</string>
+    <string name="item">Item</string>
 </resources>

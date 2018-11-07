@@ -8,18 +8,15 @@
     android:padding="16dp"
     tools:context=".AddItemActivity">
 
-    <!-- Overview category -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- Label -->
         <TextView
             android:text="@string/product_information"
             style="@style/CategoryStyle" />
 
-        <!-- Input fields -->
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="0dp"
@@ -27,21 +24,18 @@
             android:paddingLeft="4dp"
             android:orientation="vertical">
 
-            <!-- Product Name field -->
             <EditText
                 android:id="@+id/edit_product_name"
-                android:hint="Item"
+                android:hint="@string/item"
                 android:inputType="textCapWords"
                 style="@style/AddItemTheme." />
 
-            <!-- Price field -->
             <EditText
                 android:id="@+id/edit_price"
                 android:hint="@string/Price"
                 android:inputType="textCapWords"
                 style="@style/AddItemTheme." />
 
-            <!-- Quantity field -->
             <EditText
                 android:id="@+id/edit_quantity"
                 android:hint="@string/Quantity"
@@ -114,13 +108,13 @@
             <EditText
                 android:id="@+id/edit_phone_number"
                 android:hint="@string/phone_number"
-                android:inputType="text"
+                android:inputType="phone"
                 style="@style/AddItemTheme." />
 
             <!-- Signature for Company Name (Inc.) -->
             <TextView
                 android:id="@+id/label_inc"
-                android:text="Inc."
+                android:text="@string/Inc"
                 style="@style/AddItemTheme."/>
         </RelativeLayout>
     </LinearLayout>

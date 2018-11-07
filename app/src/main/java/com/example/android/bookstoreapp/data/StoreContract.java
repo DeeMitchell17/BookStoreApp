@@ -3,7 +3,7 @@ package com.example.android.bookstoreapp.data;
 import android.provider.BaseColumns;
 
 /**
- * API Contract for the Pets app.
+ * API Contract for the BookStore app.
  */
 public final class StoreContract {
 
@@ -12,12 +12,12 @@ public final class StoreContract {
     private StoreContract() {}
 
     /**
-     * Inner class that defines constant values for the pets database table.
-     * Each entry in the table represents a single pet.
+     * Inner class that defines constant values for the bookstore database table.
+     * Each entry in the table represents a single item.
      */
     public static final class ItemEntry implements BaseColumns {
 
-        /** Name of database table for pets */
+        /** Name of database table for items */
         public final static String TABLE_NAME = "bookstore";
 
         /**
@@ -28,20 +28,22 @@ public final class StoreContract {
         public final static String _ID = BaseColumns._ID;
 
         /**
-         * Name of the pet.
+         * Name of the item.
          *
          * Type: TEXT
          */
         public final static String COLUMN_PRODUCT_NAME ="item";
 
         /**
-         * Breed of the pet.
+         * price of the item.
          *
          * Type: INTEGER
          */
         public final static String COLUMN_PRICE = "price";
 
         /**
+         * Number of item available
+         *
          * Type: INTEGER
          */
         public final static String COLUMN_QUANTITY = "quantity";
@@ -51,7 +53,7 @@ public final class StoreContract {
          *
          * Type: STRING
          */
-        public final static String COLUMN_PRODUCT_IN_STOCK = "in stock";
+        public final static String COLUMN_IN_STOCK = "in_stock";
 
         /**
          * Supplier name.

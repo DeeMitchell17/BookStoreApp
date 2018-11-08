@@ -9,17 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".StoreItemActivity">
+        <activity
+            android:name=".StoreItemActivity">
+            android:label="BookStoreApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".AddItemActivity"
             android:label="@string/add_a_new_product"
-            android:theme="@style/AddItemTheme."
+            android:theme="@style/AddItemTheme"
             android:parentActivityName=".StoreItemActivity" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data

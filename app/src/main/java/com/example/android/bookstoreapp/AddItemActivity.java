@@ -46,12 +46,12 @@ public class AddItemActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
 
-        mProductNameEditText = (EditText) mProductNameEditText.findViewById(R.id.edit_product_name);
-        mPriceEditText = (EditText) mPriceEditText.findViewById(R.id.edit_price);
-        mQuantityEditText = (EditText) mQuantityEditText.findViewById(R.id.edit_quantity);
-        mStockSpinner = (Spinner) mStockSpinner.findViewById(R.id.spinner_in_stock);
-        mSupplierNameEditText = (EditText) mSupplierNameEditText.findViewById(R.id.edit_supplier_name);
-        mSupplierPhoneNumberEditText = (EditText) mSupplierPhoneNumberEditText.findViewById(R.id.edit_phone_number);
+        mProductNameEditText = (EditText) findViewById(R.id.edit_product_name);
+        mPriceEditText = (EditText) findViewById(R.id.edit_price);
+        mQuantityEditText = (EditText) findViewById(R.id.edit_quantity);
+        mStockSpinner = (Spinner) findViewById(R.id.spinner_stock);
+        mSupplierNameEditText = (EditText) findViewById(R.id.edit_supplier_name);
+        mSupplierPhoneNumberEditText = (EditText) findViewById(R.id.edit_phone_number);
 
         setupSpinner();
     }

@@ -95,19 +95,34 @@
             <!-- Supplier Name field -->
             <EditText
                 android:id="@+id/edit_supplier_name"
-                android:hint="@string/supplier_name"
+                android:hint="@string/company"
                 android:inputType="text"
                 style="@style/EditorFieldStyle" />
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <!-- Label -->
         <TextView
-            android:text="@string/supplier_phone_number"
+            android:text="@string/phone_number"
             style="@style/CategoryStyle" />
 
+        <!-- Input fields -->
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:paddingLeft="4dp">
+
+            <!-- Supplier Name field -->
             <EditText
                 android:id="@+id/edit_phone_number"
-                android:hint="@string/phone_number"
-                android:inputType="phone"
+                android:hint="@string/contact"
+                android:inputType="text"
                 style="@style/EditorFieldStyle" />
         </RelativeLayout>
     </LinearLayout>

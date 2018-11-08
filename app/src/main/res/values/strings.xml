@@ -37,4 +37,6 @@
 
     <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
     <string name="in_stock_no">No</string>
+    <string name="company">Company</string>
+    <string name="contact">Contact</string>
 </resources>

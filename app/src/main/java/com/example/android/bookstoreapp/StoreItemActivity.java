@@ -40,6 +40,7 @@ public class StoreItemActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        insertItem();
         displayDatabaseInfo();
     }
 

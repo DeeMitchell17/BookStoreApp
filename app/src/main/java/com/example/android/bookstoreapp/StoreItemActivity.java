@@ -17,6 +17,7 @@ import com.example.android.bookstoreapp.data.StoreDbHelper;
 
 public class StoreItemActivity extends AppCompatActivity {
 
+    FloatingActionButton fab;
     private StoreDbHelper mDbHelper;
 
     @Override

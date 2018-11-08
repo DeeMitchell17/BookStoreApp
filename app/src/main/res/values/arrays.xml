@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- These are the options displayed in the gender drop-down Spinner -->
     <string-array name="array_in_stock_options">
-        <item>@string/product_in_stock</item>
-        <item>@string/product_not_in_stock</item>
         <item>@string/availability_unknown</item>
+        <item>@string/in_stock_yes</item>
+        <item>@string/in_stock_no</item>
     </string-array>
 </resources>

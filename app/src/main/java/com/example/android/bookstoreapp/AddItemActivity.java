@@ -1,11 +1,11 @@
 package com.example.android.bookstoreapp;
 
-import android.app.Activity;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import android.widget.Toast;
 import com.example.android.bookstoreapp.data.StoreContract;
 import com.example.android.bookstoreapp.data.StoreDbHelper;
 
-public class AddItemActivity extends Activity {
+public class AddItemActivity extends AppCompatActivity {
 
     /** EditText field to enter the product name */
     private EditText mProductNameEditText;
@@ -94,7 +94,7 @@ public class AddItemActivity extends Activity {
         String nameString = mProductNameEditText.getText().toString().trim();
 
         String priceString = mPriceEditText.getText().toString().trim();
-        int price = Integer.parseInt(priceString);
+        double price = Double.parseDouble(priceString);
 
         String quantityString = mQuantityEditText.getText().toString().trim();
         int quantity = Integer.parseInt(quantityString);

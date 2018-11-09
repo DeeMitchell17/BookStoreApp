@@ -90,7 +90,7 @@ public class StoreItemActivity extends AppCompatActivity {
             while (cursor.moveToNext()) {
                 int currentID = cursor.getInt(idColumnIndex);
                 String currentName = cursor.getString(productColumnIndex);
-                int currentPrice = cursor.getInt(priceColumnIndex);
+                double currentPrice = cursor.getDouble(priceColumnIndex);
                 int currentQuantity = cursor.getInt(quantityColumnIndex);
                 String currentStock = cursor.getString(inStockColumnIndex);
                 String currentSupplier = cursor.getString(supplierColumnIndex);

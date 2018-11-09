@@ -33,13 +33,13 @@
             <EditText
                 android:id="@+id/edit_price"
                 android:hint="@string/Price"
-                android:inputType="textCapWords"
+                android:inputType="numberDecimal"
                 style="@style/EditorFieldStyle" />
 
             <EditText
                 android:id="@+id/edit_quantity"
                 android:hint="@string/Quantity"
-                android:inputType="textCapWords"
+                android:inputType="number"
                 style="@style/EditorFieldStyle" />
         </LinearLayout>
     </LinearLayout>
@@ -122,7 +122,7 @@
             <EditText
                 android:id="@+id/edit_phone_number"
                 android:hint="@string/contact"
-                android:inputType="text"
+                android:inputType="phone|number"
                 style="@style/EditorFieldStyle" />
         </RelativeLayout>
     </LinearLayout>

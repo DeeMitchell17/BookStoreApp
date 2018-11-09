@@ -21,7 +21,7 @@
             android:name=".AddItemActivity"
             android:label="@string/add_a_new_product"
             android:theme="@style/AddItemTheme"
-            android:parentActivityName=".StoreItemActivity" >
+            android:parentActivityName=".AddItemActivity" >
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

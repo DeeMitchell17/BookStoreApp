@@ -7,8 +7,7 @@ import android.provider.BaseColumns;
  */
 public final class StoreContract {
 
-    // To prevent someone from accidentally instantiating the contract class,
-    // give it an empty constructor.
+   
     private StoreContract() {}
 
     /**

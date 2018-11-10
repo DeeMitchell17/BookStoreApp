@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.example.android.bookstoreapp.data.StoreContract.ItemEntry;
 
 /**
- * Database helper for Pets app. Manages database creation and version management.
+ * Database helper for Bookstore app. Manages database creation and version management.
  */
 public class StoreDbHelper extends SQLiteOpenHelper {
 
@@ -35,7 +35,7 @@ public class StoreDbHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Create a String that contains the SQL statement to create the pets table
+        
         String SQL_CREATE_BOOKSTORE_TABLE =  "CREATE TABLE " + ItemEntry.TABLE_NAME + " ("
                 + ItemEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + ItemEntry.COLUMN_PRODUCT_NAME + " TEXT NOT NULL, "
@@ -44,7 +44,7 @@ public class StoreDbHelper extends SQLiteOpenHelper {
                 + ItemEntry.COLUMN_SUPPLIER_NAME + " TEXT NOT NULL,"
                 + ItemEntry.COLUMN_SUPPLIER_PHONE_NUMBER + " INTEGER NOT NULL);";
 
-        // Execute the SQL statement
+   
         db.execSQL(SQL_CREATE_BOOKSTORE_TABLE);
     }
 
@@ -53,7 +53,7 @@ public class StoreDbHelper extends SQLiteOpenHelper {
      */
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // The database is still at version 1, so there's nothing to do be done here.
+       
     }
 }
 

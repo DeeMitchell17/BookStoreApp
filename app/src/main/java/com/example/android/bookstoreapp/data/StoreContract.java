@@ -49,13 +49,6 @@ public final class StoreContract {
         public final static String COLUMN_QUANTITY = "quantity";
 
         /**
-         * Product in stock?
-         *
-         * Type: STRING
-         */
-        public final static String COLUMN_IN_STOCK = "in_stock";
-
-        /**
          * Supplier name.
          *
          * Type: STRING
@@ -71,12 +64,6 @@ public final class StoreContract {
 
         public final static String COLUMN_SUPPLIER_PHONE_NUMBER = "contact";
 
-        /**
-         * Possible values if product is in stock or not.
-         */
-        public static final String PRODUCT_IN_STOCK ="yes";
-        public static final String PRODUCT_NOT_IN_STOCK = "no";
-        public static final String AVAILABILITY_UNKNOWN = "";
     }
 
 }

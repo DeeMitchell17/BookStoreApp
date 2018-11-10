@@ -73,7 +73,6 @@ public class StoreItemActivity extends AppCompatActivity {
                     StoreContract.ItemEntry.COLUMN_PRODUCT_NAME + " - " +
                     StoreContract.ItemEntry.COLUMN_PRICE + " - " +
                     StoreContract.ItemEntry.COLUMN_QUANTITY + " - " +
-                    StoreContract.ItemEntry.COLUMN_IN_STOCK + " - " +
                     StoreContract.ItemEntry.COLUMN_SUPPLIER_NAME + " - " +
                     StoreContract.ItemEntry.COLUMN_SUPPLIER_PHONE_NUMBER + "\n");
 
@@ -82,7 +81,6 @@ public class StoreItemActivity extends AppCompatActivity {
             int productColumnIndex = cursor.getColumnIndex(StoreContract.ItemEntry.COLUMN_PRODUCT_NAME);
             int priceColumnIndex = cursor.getColumnIndex(StoreContract.ItemEntry.COLUMN_PRICE);
             int quantityColumnIndex = cursor.getColumnIndex(StoreContract.ItemEntry.COLUMN_QUANTITY);
-            int inStockColumnIndex = cursor.getColumnIndex(StoreContract.ItemEntry.COLUMN_IN_STOCK);
             int supplierColumnIndex = cursor.getColumnIndex(StoreContract.ItemEntry.COLUMN_SUPPLIER_NAME);
             int contactColumnIndex = cursor.getColumnIndex(StoreContract.ItemEntry.COLUMN_SUPPLIER_PHONE_NUMBER);
 
@@ -92,7 +90,6 @@ public class StoreItemActivity extends AppCompatActivity {
                 String currentName = cursor.getString(productColumnIndex);
                 double currentPrice = cursor.getDouble(priceColumnIndex);
                 int currentQuantity = cursor.getInt(quantityColumnIndex);
-                String currentStock = cursor.getString(inStockColumnIndex);
                 String currentSupplier = cursor.getString(supplierColumnIndex);
                 int currentContact = cursor.getInt(contactColumnIndex);
 
@@ -100,7 +97,6 @@ public class StoreItemActivity extends AppCompatActivity {
                         currentName + " - " +
                         currentPrice + " - " +
                         currentQuantity + " - " +
-                        currentStock + " - " +
                         currentSupplier + " - " +
                         currentContact));
             }
@@ -117,11 +113,10 @@ public class StoreItemActivity extends AppCompatActivity {
 
         ContentValues values = new ContentValues();
         values.put(StoreContract.ItemEntry.COLUMN_PRODUCT_NAME, "Kindle Fire");
-        values.put(StoreContract.ItemEntry.COLUMN_PRICE, "59.99");
+        values.put(StoreContract.ItemEntry.COLUMN_PRICE, "39.99");
         values.put(StoreContract.ItemEntry.COLUMN_QUANTITY, 12);
-        values.put(StoreContract.ItemEntry.COLUMN_IN_STOCK, StoreContract.ItemEntry.COLUMN_IN_STOCK);
         values.put(StoreContract.ItemEntry.COLUMN_SUPPLIER_NAME, "READERZ, INC");
-        values.put(StoreContract.ItemEntry.COLUMN_SUPPLIER_PHONE_NUMBER, 213-456-5000);
+        values.put(StoreContract.ItemEntry.COLUMN_SUPPLIER_PHONE_NUMBER, "213-456-5000");
 
         long newRowId = db.insert(StoreContract.ItemEntry.TABLE_NAME, null, values);
     }
@@ -134,14 +129,11 @@ public class StoreItemActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // User clicked on a menu option in the app bar overflow menu
         switch (item.getItemId()) {
-            // Respond to a click on the "dummy data" menu option
             case R.id.action_insert_dummy_data:
                 insertItem();
                 displayDatabaseInfo();
                 return true;
-            // Respond to a click on the "Delete all entries" menu option
             case R.id.action_delete_all_entries:
                 return true;
         }

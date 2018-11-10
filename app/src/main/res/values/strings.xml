@@ -1,22 +1,27 @@
 <resources>
     <string name="app_name">BookStoreApp</string>
+
     <string name="product_information">Product Information</string>
+
     <string name="hint_product_name">Item</string>
+
     <string name="Price">Price</string>
+
     <string name="Quantity">Quantity</string>
+
     <string name="Supplier">Supplier</string>
+
     <string name="supplier_name">Supplier Name</string>
+
     <string name="insert_dummy_data">Insert Dummy Data</string>
+
     <string name="delete_all_items">Delete All Items</string>
+
     <string name="add_a_new_product">Add a New Product</string>
+
     <string name="save">save</string>
+
     <string name="delete">delete</string>
-
-    <!-- Label for dropdown menu option if the product is in stock [CHAR LIMIT=20] -->
-    <string name="product_in_stock">In Stock</string>
-
-    <!-- Label for dropdown menu option if the product is not in stock [CHAR LIMIT=20] -->
-    <string name="product_not_in_stock">Not In Stock</string>
 
     <string name="supplier_phone_number">Supplier Phone Number</string>
 
@@ -28,15 +33,8 @@
 
     <string name="item">Item</string>
 
-    <string name="category_in_stock">In Stock</string>
-
-    <string name="availability_unknown">Unknown</string>
-
-    <!-- Label for dropdown menu option if the pet is male [CHAR LIMIT=20] -->
-    <string name="in_stock_yes">Yes</string>
-
-    <!-- Label for dropdown menu option if the pet is female [CHAR LIMIT=20] -->
-    <string name="in_stock_no">No</string>
     <string name="company">Company</string>
+
     <string name="contact">Contact</string>
+
 </resources>

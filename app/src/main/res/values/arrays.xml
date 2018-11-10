@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string-array name="array_in_stock_options">
-        <item>@string/availability_unknown</item>
-        <item>@string/in_stock_yes</item>
-        <item>@string/in_stock_no</item>
-    </string-array>
-</resources>
